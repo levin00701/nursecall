@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"></script>
+    <script src='https://cdn.plot.ly/plotly-2.25.2.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="icon" href="nurse.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Nurse Call</h1>
+        <div id="connection-status">Disconnected</div>
+        <div id="temperature-container"></div>
+       
+        <div class="chart-container">
+            <div id="gaugeDiv" class="chart"></div>
+            <div id="lineDiv" class="chart"></div>
+        </div>
+
+        <div class="image-container">
+            <img id="imagePatient" src="confirm.PNG" alt="confirm">
+            <img id="imageLight" style="height: 300px;width: 300px;" src="lightOff.PNG" alt="confirm">
+        </div>
+        <div class="light-buttons" style="margin-top: 30px;">
+            <button id="lightOn-button" onclick="turnOnOffLight('ON')">Turn on Light</button>
+            <button id="lightOff-button" onclick="turnOnOffLight('OFF')">Turn off Light</button>
+        </div>
+
+        <audio id="audioPlayer" loop>
+            <source id="audioSource"  type="audio/mpeg">
+        </audio>
+
+    </div>
+
+    <script src="scriptFile.js"></script>
+</body>
+
+</html>
